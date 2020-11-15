@@ -6,7 +6,7 @@ function Login(){
 
     const {onLogin} = useAuthContext();
 
-    return (<div>Login<br></br><br></br>
+    return (<div>Login du site<br></br><br></br>
 
         {'email'}<input></input>
         {'password'}<input></input>
