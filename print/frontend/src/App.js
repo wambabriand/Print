@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import AuthProvider from './components/authentication/AuthContext';
+import Content from './components/content/Content';
+import { StateProvider } from './components/store/storeContext';
+import { reducer } from './components/store/storeReducer';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <AuthProvider>
+    <StateProvider reducer={reducer} initialState={{}}>
+      <BrowserRouter>
+        <Content> </Content>
+      </BrowserRouter>
+    </StateProvider>
+  </AuthProvider>
   );
 }
 
